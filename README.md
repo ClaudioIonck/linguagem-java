@@ -3,7 +3,7 @@ Revisão sobre a linguagem Java
 
 ## Tópicos de Estudos
 
-* [Linguagem de programação Java](Linguagem de programação Java.md)
+* [Linguagem de programação Java](01.md)
   * Paradigmas de Programação
       - Orientado a objeto
       
