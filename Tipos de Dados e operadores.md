@@ -93,15 +93,16 @@
     
   * Operadores
     * Operadores aritméticos
-      !(![image](https://user-images.githubusercontent.com/78597253/188227853-b1fbeabb-56cc-4ef9-a46b-0b963fd8634a.png)
-      )
+    * 
+      ![image](https://user-images.githubusercontent.com/78597253/188227853-b1fbeabb-56cc-4ef9-a46b-0b963fd8634a.png)
+     
+   
+      ![image](https://user-images.githubusercontent.com/78597253/188228036-f01f1aae-7f96-4861-ad68-40259b45b274.png)
       
-      !(![image](https://user-images.githubusercontent.com/78597253/188228036-f01f1aae-7f96-4861-ad68-40259b45b274.png)
-      )
       
     * Operadores booleanos
-      !(![image](https://user-images.githubusercontent.com/78597253/188228248-a126c480-964c-4499-a07d-6ace4e6725ac.png)
-      )
+      ![image](https://user-images.githubusercontent.com/78597253/188228248-a126c480-964c-4499-a07d-6ace4e6725ac.png)
+      
      
   * Conversão de tipos de dados
     ```
