@@ -1,0 +1,67 @@
+* [Saída de Dados](Saída de Dados.md)
+  * Método System.out.println
+    ```
+    public class Texto_Simples {
+          public static void main(String[] args) {
+                        System.out.println(“Seu texto é inserido aqui, entre aspas duplas”);
+          }
+    }
+    ```
+    
+  * Método System.out.print
+    ```
+    public class Texto_Simples_print {
+          public static void main(String[] args) {
+                  System.out.print(“José”);
+                  System.out.print(“Silva Moraes”);
+          }
+    }
+    ```
+
+  * Exibir o valor de uma variável
+    ```
+    public class Main {
+        public static void main(String[] args) {
+            final float pi = 3.146f;
+            final double e;
+
+            e = 1.234e2;
+
+            String nome = "Estevao Dias";
+            String dataAniversario = "23/05/2000";
+            int lote = 35456;
+            boolean aprovado;
+
+            aprovado = true;
+
+            System.out.println(pi); // vai imprimir "3.146f"
+            System.out.println(e);// vai imprimir "1.234e2"
+            System.out.println(nome);// vai imprimir "Estevao Dias"
+            System.out.println(dataAniversario);// vai imprimir "23/05/2000"
+            System.out.println(lote);// vai imprimir "35456"
+            System.out.println(aprovado);// vai imprimir "true"
+        }
+    }
+    ```
+
+  * Exibir o valor de um decimal 
+    ```
+    {
+        
+        Scanner ler = new Scanner(System.in);
+        double tempoGasto, vm, distanciaPercorrida, automovel, litros;
+        automovel = 12;
+        
+        System.out.print("Informe o tempo gasto na viagem (em horas): ");
+        tempoGasto = ler.nextDouble();
+        System.out.print("Informe a velocidade média durante a viagem em km/h: ");
+        vm = ler.nextDouble();
+        
+        distanciaPercorrida = vm / tempoGasto;
+        litros = automovel / distanciaPercorrida;
+        
+        System.out.println(String.format("A distância percorrida´foi de: %.3f Km", distanciaPercorrida));
+        System.out.println(String.format("Quantidade de litros necessária: %.3fl.", litros));
+    }
+    ```
+  
