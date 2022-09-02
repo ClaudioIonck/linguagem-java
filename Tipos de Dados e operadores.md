@@ -101,6 +101,7 @@
       
       
     * Operadores booleanos
+    * 
       ![image](https://user-images.githubusercontent.com/78597253/188228248-a126c480-964c-4499-a07d-6ace4e6725ac.png)
       
      
