@@ -1,0 +1,9 @@
+* [Classe Math](Classe Math.md)
+  * Definição
+    - A Classe Math (Class Math) do Java
+      Para ilustrar o uso de métodos de outras classes e,  de quebra, para nos auxiliar nos cálculos de constantes (como do número pi, do número de euler), no cálculo       de funções trigonométricas (senos, cossenos, tangentes etc) e outras funcionalidades, vamos apresentar e usar a classe Math.
+      
+  * Principais operações 
+  * 
+    !(![image](https://user-images.githubusercontent.com/78597253/188229604-68a064c9-112f-4888-9947-1c7882f60e36.png)
+    )
