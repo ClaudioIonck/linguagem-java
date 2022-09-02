@@ -289,72 +289,1072 @@ Revisão sobre a linguagem Java
       * Survey da Jetbrains  
 * [Hello World](02.md)
   * Estrutura mínima de um código Java
+      ```
+      public class MyClass{
+      // código vai aqui
+      }
+      ```
+     
   * Nome do arquivo e Extensão
+      - ".java"
+
   * Nome da classe
+      ```
+      public class MyClass
+      ```
+ 
   * Método main
+      ```
+      public static void main(String [] args){ 
+      System.out.println("executando código"); }
+      ```
+      
   * Escrever dados no console
+      ```
+      import java.util.Scanner;
+
+    /**
+     * Neste exemplo pedimos para o usuário digitar a idade,
+     * depois imprimimos uma frase com a idade lida.
+     */
+    public class ExemploScanner {
+      public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+    System.out.println("Digite sua idade: ");
+    int idade = s.nextInt();
+    System.out.println("Vc tem " + idade + " anos.");
+      }
+    }
+      ```
+      
   * Indentação de código
+    ```
+       public class TesteIR {
+
+       public static void main(String[] args) {
+
+           double salary = 3300.00;
+
+           System.out.println("Não deixe de pagar os seus impostos!!");
+
+           if (salary < 1900.00) {
+               System.out.println("Pelo valor do seu salário, você não precisa "
+                       + "pagar impostos!");
+
+           } else if (salary >= 1900.00 && salary <= 2800.00) {
+               System.out.println("O IR a ser pago é de 7.5%, sendo o valor de "
+                           + "R$ 142,00 reais!");
+
+           } else if (salary >= 2800.01 && salary <= 3751.00) {
+               System.out.println("O IR a ser pago é 15%, sendo o valor de "
+                               + "R$ 350,00 reais!");
+
+           } else if (salary >= 3751.01 && salary <= 4664.00) {
+               System.out.println("O IR a ser pago é de 22.5%, sendo o "
+                                   + "valor de R$ 636,00");
+           } else {
+               System.out.println("O IR a ser pago para salários acima "
+                                   + "de R$ 4664,01 é de 30%");    
+           }     
+       }        
+    }
+    ```
+    
   * Delimitação de uma instrução
+    ```
+        public class Exemplo {
+
+        public static void main(String[] args) {
+            int resposta = 10;
+            if (resposta == 10) { 
+                System.out.println(“A resposta é exatamente 10!”);
+            } else if (resposta > 10) {
+                System.out.println(“A resposta é maior que 10!”);
+            } else {
+                System.out.println(“A resposta é menor que 10!”);
+            }
+        }
+
+    }
+    ```
+    
   * Delimitação de bloco de instruções
+    ```
+        public class Aula0032 {
+
+        static short c = 'd';
+
+        public static void main(String[] args) {
+
+            short s = 3;
+            //Bloco de instrução
+            System.out.println("O programa começou.");
+
+            if(1==1){
+                double d = 1;
+
+                c = '1';
+                s = 1 + 1;
+            }
+
+            {
+                System.out.println("O mundo é pequeno pra caramba.");
+            }
+            }
+    }
+    ```
+    
   * Compilação e Execução via linha de comando
+    ```
+    javac -d bin HelloWorld.java
+    ```
+    
 * [Tipos de Dados e operadores](03.md)
   * Tipos de Dados
+    ```
+    public class Tipos_de_Dados {
+
+         public static void main(String[] args) {
+              System.out.println("Tipos de dados em Java: \n" +
+                         "\nMenor Byte: " + Byte.MIN_VALUE +
+                         "\nMaior Byte: " + Byte.MAX_VALUE +
+                         "\nMenor Short Int: " + Short.MIN_VALUE +
+                         "\nMaior Short Int: " + Short.MAX_VALUE +
+                         "\nMenor Int: " + Integer.MIN_VALUE +
+                         "\nMaior Int: " + Integer.MAX_VALUE +
+                         "\nMenor Long: " + Long.MIN_VALUE +
+                         "\nMaior Long:" + Long.MAX_VALUE +
+                         "\nMenor Float: " + Float.MIN_VALUE +
+                         "\nMaior Float: " + Float.MAX_VALUE +
+                         "\nMenor Double: " + Double.MIN_VALUE +
+                         "\nMaior Double: " + Double.MAX_VALUE);
+
+             }
+
+        }
+    ```
+
   * Declarações de variáveis
+    ```
+       public class Tipos_Primitivos {
+           public static void main(String[] args) {
+                 byte tipoByte = 127;
+                 short tipoShort = 32767;
+                 char tipoChar = 'C';
+                 float tipoFloat = 2.6f;
+                 double tipoDouble = 3.59;
+                 int tipoInt = 2147483647;
+                 long tipoLong = 9223372036854775807L;
+                 boolean tipoBooleano = true;
+                 System.out.println("Valor do tipoByte = " + tipoByte);
+                 System.out.println("Valor do tipoShort = " + tipoShort);
+                 System.out.println("Valor do tipoChar = " + tipoChar);
+                 System.out.println("Valor do tipoFloat = " + tipoFloat);
+                 System.out.println("Valor do tipoDouble = " + tipoDouble);
+                 System.out.println("Valor do tipoInt = " + tipoInt);
+                 System.out.println("Valor do tipoLong = " + tipoLong);
+                 System.out.println("Valor do tipoBooleano = " + tipoBooleano);
+           }
+       }
+    ```
+
   * Nomes válidos para variáveis e boas práticas 
+    - Use nomes de variáveis curtas ou longas o suficiente para cada escopo do código. Geralmente o tamanho usado é de 1 (um) caractere para contadores em loops; 1 (uma) palavra para variáveis de loops e condicionais; 1-2 palavras para nomes de métodos; 2-3 palavras para nomes de classes; 3-4 palavras para nomes de variáveis globais.
+
+      Use nomes específicos para cada variável, “valor”, “igual”, “dados” não são nomes validos para nenhum caso.
+
+      Use nomes “significativos” para as variáveis. Através do nome da variável você deve ser capaz de saber o que ela contém.
+
+      Não inicie nomes de variáveis com o_, obj_, m_, etc. Uma variável não precisa de prefixos indicando o estado da variável.
+
+      Obedeça aos padrões definidos na empresa onde trabalha e defina nomes de variáveis consistentes com cada aplicação, por exemplo, “txtUserName”, “lblUserName”, “cmbSchoolType”, caso contrário a falta de legibilidade irá ser prejudicada e o uso de ferramentas para “find/replace” será prejudicado.
+
+      Obedeça aos padrões da linguagem de programação que está sendo utilizada, no caso do Java:
+      :arrow: Use para nomes de classes: VelocityResponseWritter
+
+      :arrow: Use para nomes da pacotes: com.company.project.ui
+
+      :arrow: Use para nomes de variáveis: studentName
+
+      :arrow: Não use “_” (underscore) em lugar algum exceto para constantes e valores de enums.
+
+      Não reuse o mesmo nome de variável na mesma classe em diferentes contextos.
+
+      Não use o mesmo nome de variável para diferentes propósitos em um método ou condicional.
+
+      Não use caracteres não-ASCII em nomes de variáveis.
+
+      Não use tamanhos muito longos para nomes de variáveis (mais de 50 caracteres). Caso contrário ficará difícil de ler o código além de que o mesmo pode não rodar em alguns compiladores por causa da limitação de tamanho das linhas.
+
+      Decida pelo uso de uma linguagem natural apenas: ou seja, só português ou só inglês.
+
+      Use nomes significativos para nomes de métodos. O nome deve especificar exatamente a ação executada pelo método, em alguns casos o nome do método deve iniciar por um verbo.
+
+      Use nomes significativos para os parâmetros dos métodos, dessa forma eles podem ser auto-explicativos sem a necessidade de uma documentação explicativa adicional.
+
+      Convenções de código do Java: http://www.oracle.com/technetwork/java/codeconv-138413.html 
+  
   * Atribuição de valores
+    ```
+    int lado = 2;
+    float pi = 3.1426F;
+    String texto = “DevMedia”;
+    lado = 3;
+    ```
+    
   * Operadores
     * Operadores aritméticos
+      !(![image](https://user-images.githubusercontent.com/78597253/188227853-b1fbeabb-56cc-4ef9-a46b-0b963fd8634a.png)
+      )
+      
+      !(![image](https://user-images.githubusercontent.com/78597253/188228036-f01f1aae-7f96-4861-ad68-40259b45b274.png)
+      )
+      
     * Operadores booleanos
+      !(![image](https://user-images.githubusercontent.com/78597253/188228248-a126c480-964c-4499-a07d-6ace4e6725ac.png)
+      )
+     
   * Conversão de tipos de dados
+    ```
+    using System;
+    class Teste {
+           public static void Main() {
+              int i = 1234567;
+              double v;
+              v = (double) i;
+           }
+    }
+    ```
+
 * [Saída de Dados](04.md)
   * Método System.out.println
+    ```
+    public class Texto_Simples {
+          public static void main(String[] args) {
+                        System.out.println(“Seu texto é inserido aqui, entre aspas duplas”);
+          }
+    }
+    ```
+    
   * Método System.out.print
+    ```
+    public class Texto_Simples_print {
+          public static void main(String[] args) {
+                  System.out.print(“José”);
+                  System.out.print(“Silva Moraes”);
+          }
+    }
+    ```
+
   * Exibir o valor de uma variável
-  * Exibir o valor de um decimal  
+    ```
+    public class Main {
+        public static void main(String[] args) {
+            final float pi = 3.146f;
+            final double e;
+
+            e = 1.234e2;
+
+            String nome = "Estevao Dias";
+            String dataAniversario = "23/05/2000";
+            int lote = 35456;
+            boolean aprovado;
+
+            aprovado = true;
+
+            System.out.println(pi); // vai imprimir "3.146f"
+            System.out.println(e);// vai imprimir "1.234e2"
+            System.out.println(nome);// vai imprimir "Estevao Dias"
+            System.out.println(dataAniversario);// vai imprimir "23/05/2000"
+            System.out.println(lote);// vai imprimir "35456"
+            System.out.println(aprovado);// vai imprimir "true"
+        }
+    }
+    ```
+
+  * Exibir o valor de um decimal 
+    ```
+    {
+        
+        Scanner ler = new Scanner(System.in);
+        double tempoGasto, vm, distanciaPercorrida, automovel, litros;
+        automovel = 12;
+        
+        System.out.print("Informe o tempo gasto na viagem (em horas): ");
+        tempoGasto = ler.nextDouble();
+        System.out.print("Informe a velocidade média durante a viagem em km/h: ");
+        vm = ler.nextDouble();
+        
+        distanciaPercorrida = vm / tempoGasto;
+        litros = automovel / distanciaPercorrida;
+        
+        System.out.println(String.format("A distância percorrida´foi de: %.3f Km", distanciaPercorrida));
+        System.out.println(String.format("Quantidade de litros necessária: %.3fl.", litros));
+    }
+    ```
+    
 * Classe Math
   * Definição
+    - A Classe Math (Class Math) do Java
+      Para ilustrar o uso de métodos de outras classes e,  de quebra, para nos auxiliar nos cálculos de constantes (como do número pi, do número de euler), no cálculo       de funções trigonométricas (senos, cossenos, tangentes etc) e outras funcionalidades, vamos apresentar e usar a classe Math.
+      
   * Principais operações 
+    !(![image](https://user-images.githubusercontent.com/78597253/188229604-68a064c9-112f-4888-9947-1c7882f60e36.png)
+    )
+
 * String
   * Concatenação de String
+    ```
+    String txt1 = "Bóson ";
+    String txt2 = "Treinamentos ";
+    String txt3 = "em Tecnologia";
+
+    System.out.printf("Concatenando: %s%n",txt1.concat(txt2).concat(txt3));
+    ```
+
   * Principais operações sobre String
+    - concat:
+      ```
+      String nomeCompleto = nome + sobrenome;
+      ```
+      
+    - String.valueOf:
+      ```
+      public class Testa_Metodo_valueOf {
+      public static void main(String[] args) {
+      double numero = 102939939.939;
+      boolean booleano = true;
+
+      System.out.println("Retorna Valor : " + String.valueOf(numero));
+      System.out.println("Retorna Valor: " + String.valueOf(booleano));
+      ```
+      
+    - Length:
+      ```
+      String nomeCurso = "Java";
+
+      System.out.printf("\nTamanho da variável nomeCurso: %d", nomeCurso.length());
+      ```
+      
+    - charAt:
+      ```
+      String nomeCurso = "JAVA";
+
+      if(nomeCurso.charAt(1) == ‘A’) {
+          System.out.println(“O caractere A está na posição 1”);
+      }
+      ```
+      
+    - getChars:
+      ```
+      String nomeCurso = "Curso Java Web";
+      //É A DIFERENÇA DO 1º E 2º PARÂMETRO DO MÉTODO getChars
+      //SE DIMINUIR OS 2 O RESULTADO TEM QUE SER O MESMO INICIADO NO ARRAY
+      char[] numIndice = new char[7];
+
+      nomeCurso.getChars(2, 9, numIndice, 0);
+      System.out.print("Valores Copiados \n");
+
+      for(char caracter : numIndice) {
+          System.out.print("["+caracter+"]");
+      }
+
+      System.out.println("\n\n Abaixo Índice demonstrativo dos valores copiados\n");
+
+      int[] b = {0,1,2,3,4,5,6};
+      for(int i = 0; i < b.length; i++) {
+          System.out.print("["+b[i]+"]");
+      }
+      ```
+      
+    - startsWith e endsWith:
+      ```
+      String[] nomes = {"iniciado", "iniciando", "finalizado", "finalizando"};
+
+      for (String recebeNomes : nomes) {
+          if (recebeNomes.startsWith("in"))
+              System.out.printf("\"%s\" inicia com \"in\" \n", recebeNomes);
+      }
+
+      System.out.println();
+
+      for (String recebeNomes : nomes) {
+          if (recebeNomes.startsWith("ici", 2))
+              System.out.printf("\"%s\" inicia com \"ici\" na posição 2 \n", recebeNomes);
+      }
+
+      System.out.println();
+
+      for (String recebeNomes : nomes) {
+          if (recebeNomes.endsWith("ado"))
+              System.out.printf("\"%s\" termina com \"ado\" \n", recebeNomes);
+      }
+      ```
+      
+    - indexOf e lastIndexOf:
+      ```
+      String letras = "abcadefghijklmcopqrsdeftuvz";
+      //TESTA indexOf PARA LOCALIZAR UM CARACTERE EM UM STRING
+      System.out.printf("Último 'c' está localizado no index %d\n", letras.indexOf('c'));
+      System.out.printf("Último 'a' está localizado no index %d \n", letras.indexOf('a', 1));
+
+      //-1 NÃO EXISTE
+      System.out.printf("'$' está localizado no index %d\n\n", letras.indexOf('$'));
+
+      //TESTA lastIndexOf PARA LOCALIZAR UM CARACTERE EM UMA STRING
+      System.out.printf("Último 'c' está localizado no index %d\n", letras.lastIndexOf('c'));
+      System.out.printf("Último 'a' está localizado no index %d\n", letras.lastIndexOf('a', 5));
+      System.out.printf("Último '$' está localizado no index %d\n", letras.lastIndexOf('$'));
+
+      //TESTA indexOf PARA LOCALIZAR UMA SUBSTRING EM UMA STRING
+      System.out.printf("\"def\" está localizado no index %d\n", letras.indexOf("def"));
+
+      //2 argumento string e outro o ponto inicial que começará a pesquisa
+      System.out.printf("\"def\" está localizado no index %d\n", letras.indexOf("def", 7));
+      System.out.printf("\"hello\" está localizado no index %d\n\n", letras.indexOf("hello"));
+      ```
+      
+    - substring:
+      ```
+      String nome = "José Silveira";
+      System.out.println("String : " + nome);
+
+      String substring = nome.substring(5);
+      System.out.println("String depois da 3º index: " + "["+substring+"]");
+
+      substring = nome.substring(1, 6);
+      System.out.println("Substring (1,6): " + "["+substring+"]");
+      ```
+      
+    - replace:
+      ```
+      String nome = "mesquita";
+      String nomeAlterado = nome.replace('e', 'o');
+      System.out.println(nomeAlterado);
+      ```
+      
+    - toUpperCase e toLowerCase:
+      ```
+      String nomeA = "joaquina";
+      String nomeB = "Paulo";
+
+      System.out.println(nomeA.toUpperCase());
+      System.out.println(nomeB.toLowerCase());
+      ```
+      
+    - toCharArray:
+      ```
+      String s1 = "olá";
+      String s2 = "TCHAU";
+      String s3 = " espaços ";
+
+      System.out.println("s1 = "+ s1 + "\n" + "s2 = "+ s2 + "\n" + "s3 = "+s3);
+
+      //MÉTODO REPLACE
+      System.out.printf("Replace 'l' por 'L' no s1: %s\n\n", s1.replace('l', 'L'));
+
+      //MÉTODO UPPER E LOWERCASE
+      System.out.printf("s1.toUpperCase() = %s\n", s1.toUpperCase());
+      System.out.printf("s2.toUpperCase() = %s\n\n", s2.toLowerCase());
+
+      //MÉTODO TRIM - REMOVE OS ESPAÇOS
+      System.out.printf("s3 depois do trim = \"%s\"\n\n", s3.trim());
+
+      //CONVERTEU O olá PARA CHAR
+      char[] charArray = s1.toCharArray();
+      System.out.printf("s1 como um caracter array = ");
+
+      for(char caracter : charArray) {
+          System.out.print(caracter);
+      }
+      ```
+
   * Comparação de String
+    ```
+    String s1 = "a";
+    String s2 = "a";
+    System.out.println(s1.equals(s2));
+    ```
+    
   * Diferença entre String e caracter
+    - Em Java, char é um tipo de dados primitivo usado para conter um único caractere. Significa um único caractere do conjunto de caracteres UTF-16. Em comparação,         String é uma classe que contém uma sequência de caracteres e pode ser considerada uma matriz de caracteres.
+    
 * Entrada de Dados
   * Classe Scanner
-    * Obter um valor inteiro
-    * Obter um valor decimal
-    * Obter um valor de texto 
+    * Obter um valor inteiro; Obter um valor decimal; Obter um valor de texto:
+      ```
+      public class Pessoa {
+
+          private Integer codigo;
+          private String nome;
+          private String endereco;
+          private Integer idade;
+
+          public Integer getCodigo() {
+            return codigo;
+          }
+
+          public void setCodigo(Integer codigo) {
+            this.codigo = codigo;
+          }
+
+          public String getNome() {
+            return nome;
+          }
+
+          public void setNome(String nome) {
+            this.nome = nome;
+          }
+
+          public String getEndereco() {
+            return endereco;
+          }
+
+          public void setEndereco(String endereco) {
+            this.endereco = endereco;
+          }
+
+          public Integer getIdade() {
+            return idade;
+          }
+
+          public void setIdade(Integer idade) {
+            this.idade = idade;
+          }
+
+          @Override
+          public String toString() {
+            return "Código: "+codigo+ "" +
+                    "\n"+ "Nome: "+nome+"" +
+                        "\n"+"Endereço: "+endereco+"" +
+                            "\n"+"Idade: "+idade+"\n";
+          }
+      }
+      ```
 * Fluxo de Controle
   * Estruturas de Decisões
     * if-else-then
-    * switch
+      ```
+      class IfElseDemo {
+         public static void main(String[] args) {
+
+             int testscore = 76;
+             char grade;
+
+             if (testscore >= 90) {
+                 grade = 'A';
+             } else if (testscore >= 80) {
+                 grade = 'B';
+             } else if (testscore >= 70) {
+                 grade = 'C';
+             } else if (testscore >= 60) {
+                 grade = 'D';
+             } else {
+                 grade = 'F';
+             }
+             System.out.println("Grade = " + grade);
+         }
+      }
+      ```
+      
+    * switch:
+      ```
+      switch (expressão) {
+
+      case valor1:
+
+      // bloco de código que será executado
+
+      break;
+
+      case valor2:
+
+      // bloco de código que será executado
+
+      break;
+
+      case valorN:
+
+      // bloco de código que será executado
+
+      break;
+
+      default:
+
+      // bloco de código que será executado se nenhum dos cases for aceito
+
+      }
+      ```
+      
   * Estruturas de Repetições
     * for
+      ```
+      public class forSimples{
+          public static void main(String[] args) {
+              for(int count=10 ; count >= 1; count--){
+                  System.out.println(count);
+              }
+          }
+      }
+      ```
+      
     * while
+      ```
+      public class Aula0021 {
+
+          public static void main(String[] args) {
+              //Estrutura While
+
+      //        enquanto(<=9){
+      //            //incremento da variável que está servindo a nossa condição
+      //            inteira = inteira + 1;
+      //            imprima("essa msg");
+      //        }
+
+              //INCREMENTADO - de 0 à 9
+              int i = 0;
+              while(i<=9){
+                  i = i + 1;
+                  System.out.println( i );
+              }
+              /*
+               * 1
+               * 2
+               * 3
+               * 4
+               * 5
+               * 6
+               * 7
+               * 8
+               * 9
+               * 10
+               */
+
+              //DE-CREMENTADO - de 9 à 0
+              int x = 0;
+              while(x>=0){
+                  x = x - 1;
+                  System.out.println( x );
+              }
+              /*
+              * 10
+              * 9
+              * 8
+              * 7
+              * 6
+              * 5
+              * 4
+              * 3
+              * 2
+              * 1
+              * 0
+              * */
+
+          }
+
+      }
+      ```
+      
     * do-while 
+      ```
+      public class JavaDoWhileLoop {
+
+       public static void main(String[] args) {
+
+        int i = 5;
+        do {
+         System.out.println(i);
+         i++;
+        } while (i <= 10);
+       }
+      }
+      ```
+      
     * Comandos break e continue
+      ```
+      public class breakTest {
+          public static void main(String[] args) {
+              long i = System.currentTimeMillis();
+              boolean imprimir = true;
+
+              for(int count=1 ; count <=1000000 ; count++){
+                  if((count % 17 == 0) && (count % 19 == 0))
+                      if(imprimir){
+                          System.out.println(count);
+                          imprimir=false;
+                      }
+              }
+
+              System.out.println("Tempo de execução, em milisegundos: "+ (System.currentTimeMillis() -i));
+          }
+
+      }
+      
+      
+      public class continueTest {
+          public static void main(String[] args) {
+              long i = System.currentTimeMillis();
+
+              for(int count=1 ; count <=1000000 ; count++){
+                  if(count % 2 == 0){
+                      continue;
+                  }
+                  if((count % 17 == 0) && (count % 19 == 0)){
+                      System.out.println(count);
+                      break;
+                  }
+
+              }
+
+              System.out.println("Tempo de execução, em milisegundos: "+ (System.currentTimeMillis() -i));
+          }
+
+      }
+      ```
 * Arranjos e Matrizes
   * Definição matemática
+    - As linguagens de programação procuram dar suporte à implementaçao do conceito de vetores e matrizes existentes na matemática. Na linguagem Java a base deste           suporte são os arranjos. Um arranjo é constituído de uma seqüência indexável de variáveis todas do mesmo tipo. É importante enfatizar que, a menos de algum           vício de linguagem, o termo "arranjo"  e "variável do tipo arranjo" são conceitos bem distintos.
+
+      Um tipo arranjo é uma especialização do tipo referência:
+      Já vimos como utilizar as variáveis correspondentes aos oito tipos primitivos. Na linguagem Java, além dos oito tipos primitivos - long, int, short, byte, char,       float, double e boolean, existem as variáveis que podem conter endereços ou referências de memória. Em Java as variáveis do tipo arranjo são especializações de       variáveis deste tipo, denominado tipo referência, ou seja as variáveis do tipo arranjo são também variáveis do tipo referência. Todas as variáveis que não são         de um dos oito tipos primitivos são genericamente conhecidas como variáveis do tipo referência.
+      
   * Declaração de arranjos
+    ```
+    public class Declaracao_Array {
+        public static void main(String[] args) {
+            //[] - são inseridos em uma variável que referecia um array
+            int[] a = new int[4];
+            //OUTRA MANEIRA DE FAZER UMA DECLARAÇÃO DE ARRAY
+            int[] b;
+            b = new int[10];
+            //DECLARANDO VÁRIOS ARRAYS
+            int[] r = new int[44], k = new int[23];
+
+    //{} - inicializar valores em um array sua declaração
+            int[] iniciaValores = {12,32,54,6,8,89,64,64,6};
+
+    //DECLARA UM ARRAY DE INTEIROS
+            int[] meuArray;
+
+            //ALOCA MEMÓRIA PARA 10 INTEIROS
+            meuArray = new int[10];
+
+            //INICIALIZA O PRIMEIRO ELEMENTO
+            meuArray [0] = 100;
+            meuArray [1] = 85;
+            meuArray [2] = 88;
+            meuArray [3] = 93;
+            meuArray [4] = 123;
+            meuArray [5] = 952;
+            meuArray [6] = 344;
+            meuArray [7] = 233;
+            meuArray [8] = 622;
+            meuArray [9] = 8522;
+            //meuArray [10] = 564; //ESTOURA A PILHA POIS NÃO EXISTE O ÍNDICE 10
+
+            System.out.println(meuArray[9]);
+            System.out.println(meuArray[2]);
+        }
+    }
+    ```
+    
   * Declaração de matrizes
+    ```
+    int [][]matriz = new int[2][];
+ 
+    for(int i=0; i<matriz.length; i++){
+        matriz[i] = new int[3]; // ou, por exemplo, = { i, i+1, i+2 };
+       for(int j=0; j<matriz[i].length; j++){
+          matriz[i][j]=5;
+          System.out.print(matriz[0][j]);
+       }
+       System.out.println(matriz[i][0]);
+    }
+    ```
+
   * Percorrer arranjos
+    ```
+            ArrayList lista = new ArrayList();
+                String[] array = {"true", "true", "true", "false", "false"};
+                for(int x = 0; x < array.length; x++){
+                    if(array[x].equals("true")){
+                        lista.add(x);
+                    }
+                }
+                System.out.println(lista.size());
+                //verifica o tamanho do arraylist
+                if(lista.size() >= 8){
+                     System.out.println("aluno aprovado");
+                }   
+    ```
+    
   * Percorrer matrizes
-    * Linha a linha
-    * Coluna a coluna
-    * Em diagonal 
-  * Utilizar arranjos e matrizes como parâmetros de métodos 
-  * Utilizar arranjos e matrizes como retorno de métodos 
+    * Linha a linha:
+      ```
+      String[][] matriz = {{"Nome1", "Sobrenome1"}, {"Nome2", "Sobrenome2"}, {"Nome3", "Sobrenome3"}};
+
+      for (String[] conjunto : matriz) {
+         System.out.println(conjunto[0] + " " + conjunto [1]);
+      }
+
+      // ou assim tbm... 
+      for(int indice = 0; indice < matriz.length; indice++) {
+         String[] conjunto = matriz[indice];
+         for(int indiceConjunto = 0; indiceConjunto < conjunto.length; indiceConjunto++) {
+            System.out.println(conjunto[indiceConjunto++] + " " + conjunto [indiceConjunto]);	
+         }
+      }
+      ```
+      
+    * Coluna a coluna:
+      ```
+      public static void compararColunas(int[][] matriz, int colunaParaComparar) {
+
+
+          for (int c = 0; c < matriz.length; c++) {
+              if (colunaParaComparar != c) {
+                  boolean iguais = true;
+
+                  for (int l = 0; l < matriz.length; l++) {
+                      if (matriz[l][colunaParaComparar] != matriz[l][c]) {
+                          iguais = false;
+                          break;
+                      }
+                  }
+                  if (iguais) {
+                      System.out.println("A coluna " + colunaParaComparar + " é igual à " + c);
+                  }
+              }
+          }
+      }
+      ```
+      
+    * Em diagonal:
+      ```
+      int D = 0; // soma dos números da diangonal 2
+
+      for (i=0; i<N; i++) {
+        D += m[i][i];
+      }
+
+      int d = 0; // somas dos números da diangonal 1
+
+      for (i=0; i<N; i++) {
+
+        for (j=N-1; j>=0; j--) {
+           d += m[i][j];
+           break;
+        }
+      }
+      int df = d - D; // resultado da diferença da soma dos números das diagonais (o que voce quer :D)
+      ```
+      
+  * Utilizar arranjos e matrizes como parâmetros de métodos
+    ```
+    class aindacpf{
+      static int dezena(String cpf){
+        int somaprod=0;
+        for(int i=0; i<cpf.length(); i++)
+          somaprod=somaprod+(cpf.charAt(8-i)-'0')*(i+2);
+        int restoAux=somaprod%11;
+        return restoAux<2 ? 0 : 11-restoAux;
+      }
+      static int unidade(String cpf10){
+        int somaprod=0;
+        for(int i=0; i<cpf10.length(); i++)
+          somaprod=somaprod+(cpf10.charAt(9-i)-'0')*(i+2);
+        int restoAux=somaprod%11;
+        return restoAux<2 ? 0 : 11-restoAux;
+      }
+      public static void main(String args[]){
+        if(args.length!=1){
+          System.out.println("Forneca o numero do CPF na linha de comando");
+          System.exit(0);
+        }
+        String cpf= args[0];
+        System.out.println("calculo dos digitos verificadores do cpf:"+cpf);
+        int dezena=dezena(cpf);
+        int unidade=unidade(cpf+dezena);
+        System.out.print(dezena);
+        System.out.println(unidade);
+      }
+    }
+    ```
+    
+  * Utilizar arranjos e matrizes como retorno de métodos
+    ```
+    public class Inicializando_Arrays_Bidimensionais {
+        public static void main(String[] args) {
+
+            int[][] array1 = { { 1,2,3 }, { 4, 5, 6 } };
+            int[][] array2 = { { 1, 2 }, { 3 }, { 4, 5, 6} };
+
+            System.out.println("Valores no array1 passados na linha são");
+            outputArray( array1 ); //exibe o array 2 por linha
+
+            System.out.println("Valores no array2 passados na linha são");
+            outputArray( array2 ); //exibe o array 2 por linha
+
+            }
+        //FAZ UM LOOP PELAS LINHAS DO ARRAY
+        public static void outputArray(int[][] array)
+        {
+            //FAZ UM LOOP PELAS COLUNAS DA LINHA ATUAL
+            for(int linha = 0; linha < array.length; linha++)
+            {
+                //FAZ LOOP PELAS COLUNAS DA LINHA ATUAL
+                for( int coluna = 0; coluna < array[linha].length; coluna++)
+                    System.out.printf("%d ", array[linha][coluna]);
+                System.out.println();
+            }
+        }
+    }
+    ```
+    
 * Tratamento de Exceções
   * Definição
+    - Uma maneira de tentar contornar esses imprevistos é realizar o tratamento dos locais no código que podem vir a lançar possíveis exceções, como por exemplo,           campo de consulta a banco de dados, locais em que há divisões, consulta a arquivos de propriedades ou arquivos dentro do próprio computador.
+      Para tratar as exceções em Java são utilizados os comandos try e catch.
+      
   * Exceções comuns
     * Divisão por zero
+      ```
+      // Java Program to Handle Divide By Zero Exception
+      import java.io.*;
+      class GFG {
+          public static void main(String[] args)
+          {
+              int a = 5;
+              int b = 0;
+              try {
+                  System.out.println(a / b); // throw Exception
+              }
+              catch (ArithmeticException e) {
+                  // Exception handler
+                  System.out.println(
+                      "Divided by zero operation cannot possible");
+              }
+          }
+      }
+      ```
+      
     * Conversão de tipos de dados inválidos
+      ```
+      Ocorreu uma exceão ao executar o método aumentarLetras()
+      java.lang.Exception: java.lang.NullPointerException
+      ```
+      
     * Acessar uma posição inválida em um arranjo
+      ```
+      public class UnderAgeException extends Exception {
+          private int _age;
+
+          public UnderAgeException(String message, int age) {
+                  super(message);
+                  this._age = age;
+          }
+
+          // Use the getAge method to get the value that caused the exception.
+          public int getAge() {
+                  return _age;
+          }
+      }
+      ```
+      
     * Acessar uma String nula
-  * Bloco para capturar uma exceção 
+      ```
+      public static boolean cartaoExistente(CartaoDeCredito cartaoDeCredito, Usuario usuario){
+         for (CartaoDeCredito cartao : usuario.getCartoes()) {
+            if(cartaoDeCredito.getNumero().equals(cartao.getNumero())){
+               return false;
+            }
+         }
+      return true;
+      }
+      ```
+      
+  * Bloco para capturar uma exceção
+    ```
+    try
+    {
+      //trecho de código que pode vir a lançar uma exceção
+    }
+    catch(tipo_exceçao_1 e)
+    {
+      //ação a ser tomada
+    }
+    catch(tipo_exceçao_2 e)
+    {
+      //ação a ser tomada
+    }
+    catch(tipo_exceçao_n e)
+    {
+      //ação a ser tomada
+    }
+    ```
+    
   * Bloco para capturar diferentes exceções 
+    ```
+    import java.util.InputMismatchException;
+    import java.util.Scanner;
+
+    public class Exemplo_PrintStrackTrace {
+
+      public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+          System.out.print("Digite a idade: ");
+          int idade = sc.nextInt();
+
+          System.out.println(idade);
+        } catch (InputMismatchException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+    ```
+    
   * Bloco finally
+    ```
+    try
+    {
+      //trecho de código que pode vir a lançar uma exceção
+    }
+    catch(tipo_exceçao_1 e)
+    {
+      //ação a ser tomada
+    }
+    catch(tipo_exceçao_2 e)
+    {
+      //ação a ser tomada
+    }
+    catch(tipo_exceçao _n e)
+    {
+      //ação a ser tomada
+    }
+    finally
+    {
+      //ação a ser tomada
+    }
+    ```
+    
   * Lançar uma exceção
+    ```
+    class Regr{
+    static void moeda() throws Exception{
+    throw new Exception();
+    }
+    public static void main(String args[]){
+    try{
+    moeda();
+    }
+    catch(Exception e){
+    throw  e;
+    }
+    }}
+    ```
+
 * Métodos estáticos
   * Estrutura de declaração de um método estático
   * Nomes válidos e boas práticas 
@@ -364,6 +1364,15 @@ Revisão sobre a linguagem Java
     * Disponíveis na mesma classe
     * Disponíveis em outra classe/arquivo. 
   * Recursão 
+
+
+
+
+
+--------------------------------------------------------------------
+
+
+
 * Classe
   * Definição
     * Representação de classe e objeto na UML
