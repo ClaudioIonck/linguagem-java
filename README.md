@@ -1357,13 +1357,180 @@ Revisão sobre a linguagem Java
 
 * Métodos estáticos
   * Estrutura de declaração de um método estático
-  * Nomes válidos e boas práticas 
+    ```
+    public class Teste_Metodo_Static {
+
+     public static void main(String[] args) {
+      double num1 = 8.5;
+      double pi = Math.PI;
+
+      System.out.println("Valor num1 = "+num1);
+      System.out.println("Valor PI = "+pi);
+
+      System.out.println("Soma dos valores = "+(num1+pi));
+
+     }
+
+    }
+    ```
+    
+  * Nomes válidos e boas práticas
+    - Use nomes específicos para cada variável, “valor”, “igual”, “dados” não são nomes validos para nenhum caso.
+
+      Use nomes “significativos” para as variáveis. Através do nome da variável você deve ser capaz de saber o que ela contém.
+
+      Não inicie nomes de variáveis com o_, obj_, m_, etc. Uma variável não precisa de prefixos indicando o estado da variável.
+
+      Obedeça aos padrões definidos na empresa onde trabalha e defina nomes de variáveis consistentes com cada aplicação, por exemplo, “txtUserName”, “lblUserName”,         “cmbSchoolType”, caso contrário a falta de legibilidade irá ser prejudicada e o uso de ferramentas para “find/replace” será prejudicado.
+
+      Obedeça aos padrões da linguagem de programação que está sendo utilizada, no caso do Java:
+      :arrow: Use para nomes de classes: VelocityResponseWritter
+
+      :arrow: Use para nomes da pacotes: com.company.project.ui
+
+      :arrow: Use para nomes de variáveis: studentName
+
+      :arrow: Não use “_” (underscore) em lugar algum exceto para constantes e valores de enums.
+      
   * Parâmetros 
+    ```
+    public void incrementa (int num) {
+        num++;
+        System.out.println(“num : ” + num);
+    }
+
+    // veja agora
+
+    int num = 10;
+
+    incrementa (num); //Imprimirá 11
+
+    System.out.println(”num : ” + num); //Imprimirá 10
+    ```
+    
   * Retorno
+    ```
+    class Metodo3{
+
+     String nome = "João Silva";
+
+     public String retornaNome()
+     {
+      return nome;
+     }
+    }
+
+    public class Metodo_Com_Retorno {
+
+     public static void main(String[] args) {
+
+      Metodo3 m3 = new Metodo3();
+      System.out.println(m3.retornaNome());
+
+     }
+
+    }
+    ```
+  
   * Utilização de métodos estáticos 
-    * Disponíveis na mesma classe
-    * Disponíveis em outra classe/arquivo. 
+    * Disponíveis na mesma classe:
+      ```
+      public class Conta {
+
+       private Double saldo;
+
+       public void setSaldo(Double saldo) {
+        this.saldo = saldo;
+       }
+
+       public Double getSaldo() {
+        return saldo;
+       }
+
+       public void depositar(Double valor){
+        saldo += valor;
+       }
+
+       public void verificaSaldo(){
+        System.out.println("Valor do Saldo: "+getSaldo());
+       }
+      }
+      
+      
+      public static void main(String[] args) {
+
+       //INSTANCIA A CLASSE
+       Conta conta = new Conta();
+
+       //DEFINE UM VALOR DE SALDO
+       conta.setSaldo(633.00);
+
+       //DEFINE VALOR PARA DEPOSITAR
+       conta.depositar(555.0);
+
+       //RESGATA VALOR
+       conta.verificaSaldo();
+
+      }
+      ```
+      
+    * Disponíveis em outra classe/arquivo:
+      ```
+      public class Teste_Metodo_Static {
+
+       public static void main(String[] args) {
+        double num1 = 8.5;
+        double pi = Math.PI;
+
+        System.out.println("Valor num1 = "+num1);
+        System.out.println("Valor PI = "+pi);
+
+        System.out.println("Soma dos valores = "+(num1+pi));
+
+       }
+
+      }
+      
+      -------------------------------------------------------------------
+      
+      class Soma{
+
+       public static int resultado(int num1, int num2){
+        return (num1 + num2);
+       }
+      }
+
+      public class TestaSomaEstatica {
+
+       public static void main(String[] args) {
+
+        System.out.println(Soma.resultado(10,50));
+       }
+      }
+      ```
+      
   * Recursão 
+    ```
+    public class ImprimirPares {
+      public static void main(String[] args) {
+        System.out.println("Inicio do programa.");
+        ImprimirPares ip = new ImprimirPares();
+        ip.imprimir(5);
+        System.out.println("Fim do programa.");
+      }
+
+      private void imprimir(int x) {
+        int soma = 0;
+
+        for(int cont = 0; cont < x; cont++) {
+          if(cont % 2 == 0)
+            soma = soma + cont;
+        }
+
+        System.out.println("Soma dos pares: " + soma);
+      }
+    }
+    ```
 
 
 
