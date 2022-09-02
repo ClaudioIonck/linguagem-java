@@ -5,5 +5,5 @@
       
   * Principais operações 
   * 
-    !(![image](https://user-images.githubusercontent.com/78597253/188229604-68a064c9-112f-4888-9947-1c7882f60e36.png)
-    )
+    ![image](https://user-images.githubusercontent.com/78597253/188229604-68a064c9-112f-4888-9947-1c7882f60e36.png)
+    
