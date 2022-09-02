@@ -1,0 +1,142 @@
+* [Tratamento de Exceções](Tratamento de Exceções.md)
+  * Definição
+    - Uma maneira de tentar contornar esses imprevistos é realizar o tratamento dos locais no código que podem vir a lançar possíveis exceções, como por exemplo,           campo de consulta a banco de dados, locais em que há divisões, consulta a arquivos de propriedades ou arquivos dentro do próprio computador.
+      Para tratar as exceções em Java são utilizados os comandos try e catch.
+      
+  * Exceções comuns
+    * Divisão por zero
+      ```
+      // Java Program to Handle Divide By Zero Exception
+      import java.io.*;
+      class GFG {
+          public static void main(String[] args)
+          {
+              int a = 5;
+              int b = 0;
+              try {
+                  System.out.println(a / b); // throw Exception
+              }
+              catch (ArithmeticException e) {
+                  // Exception handler
+                  System.out.println(
+                      "Divided by zero operation cannot possible");
+              }
+          }
+      }
+      ```
+      
+    * Conversão de tipos de dados inválidos
+      ```
+      Ocorreu uma exceão ao executar o método aumentarLetras()
+      java.lang.Exception: java.lang.NullPointerException
+      ```
+      
+    * Acessar uma posição inválida em um arranjo
+      ```
+      public class UnderAgeException extends Exception {
+          private int _age;
+
+          public UnderAgeException(String message, int age) {
+                  super(message);
+                  this._age = age;
+          }
+
+          // Use the getAge method to get the value that caused the exception.
+          public int getAge() {
+                  return _age;
+          }
+      }
+      ```
+      
+    * Acessar uma String nula
+      ```
+      public static boolean cartaoExistente(CartaoDeCredito cartaoDeCredito, Usuario usuario){
+         for (CartaoDeCredito cartao : usuario.getCartoes()) {
+            if(cartaoDeCredito.getNumero().equals(cartao.getNumero())){
+               return false;
+            }
+         }
+      return true;
+      }
+      ```
+      
+  * Bloco para capturar uma exceção
+    ```
+    try
+    {
+      //trecho de código que pode vir a lançar uma exceção
+    }
+    catch(tipo_exceçao_1 e)
+    {
+      //ação a ser tomada
+    }
+    catch(tipo_exceçao_2 e)
+    {
+      //ação a ser tomada
+    }
+    catch(tipo_exceçao_n e)
+    {
+      //ação a ser tomada
+    }
+    ```
+    
+  * Bloco para capturar diferentes exceções 
+    ```
+    import java.util.InputMismatchException;
+    import java.util.Scanner;
+
+    public class Exemplo_PrintStrackTrace {
+
+      public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+          System.out.print("Digite a idade: ");
+          int idade = sc.nextInt();
+
+          System.out.println(idade);
+        } catch (InputMismatchException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+    ```
+    
+  * Bloco finally
+    ```
+    try
+    {
+      //trecho de código que pode vir a lançar uma exceção
+    }
+    catch(tipo_exceçao_1 e)
+    {
+      //ação a ser tomada
+    }
+    catch(tipo_exceçao_2 e)
+    {
+      //ação a ser tomada
+    }
+    catch(tipo_exceçao _n e)
+    {
+      //ação a ser tomada
+    }
+    finally
+    {
+      //ação a ser tomada
+    }
+    ```
+    
+  * Lançar uma exceção
+    ```
+    class Regr{
+    static void moeda() throws Exception{
+    throw new Exception();
+    }
+    public static void main(String args[]){
+    try{
+    moeda();
+    }
+    catch(Exception e){
+    throw  e;
+    }
+    }}
+    ```
