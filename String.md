@@ -1,0 +1,177 @@
+* [String](String.md)
+  * Concatenação de String
+    ```
+    String txt1 = "Bóson ";
+    String txt2 = "Treinamentos ";
+    String txt3 = "em Tecnologia";
+
+    System.out.printf("Concatenando: %s%n",txt1.concat(txt2).concat(txt3));
+    ```
+
+  * Principais operações sobre String
+    - concat:
+      ```
+      String nomeCompleto = nome + sobrenome;
+      ```
+      
+    - String.valueOf:
+      ```
+      public class Testa_Metodo_valueOf {
+      public static void main(String[] args) {
+      double numero = 102939939.939;
+      boolean booleano = true;
+
+      System.out.println("Retorna Valor : " + String.valueOf(numero));
+      System.out.println("Retorna Valor: " + String.valueOf(booleano));
+      ```
+      
+    - Length:
+      ```
+      String nomeCurso = "Java";
+
+      System.out.printf("\nTamanho da variável nomeCurso: %d", nomeCurso.length());
+      ```
+      
+    - charAt:
+      ```
+      String nomeCurso = "JAVA";
+
+      if(nomeCurso.charAt(1) == ‘A’) {
+          System.out.println(“O caractere A está na posição 1”);
+      }
+      ```
+      
+    - getChars:
+      ```
+      String nomeCurso = "Curso Java Web";
+      //É A DIFERENÇA DO 1º E 2º PARÂMETRO DO MÉTODO getChars
+      //SE DIMINUIR OS 2 O RESULTADO TEM QUE SER O MESMO INICIADO NO ARRAY
+      char[] numIndice = new char[7];
+
+      nomeCurso.getChars(2, 9, numIndice, 0);
+      System.out.print("Valores Copiados \n");
+
+      for(char caracter : numIndice) {
+          System.out.print("["+caracter+"]");
+      }
+
+      System.out.println("\n\n Abaixo Índice demonstrativo dos valores copiados\n");
+
+      int[] b = {0,1,2,3,4,5,6};
+      for(int i = 0; i < b.length; i++) {
+          System.out.print("["+b[i]+"]");
+      }
+      ```
+      
+    - startsWith e endsWith:
+      ```
+      String[] nomes = {"iniciado", "iniciando", "finalizado", "finalizando"};
+
+      for (String recebeNomes : nomes) {
+          if (recebeNomes.startsWith("in"))
+              System.out.printf("\"%s\" inicia com \"in\" \n", recebeNomes);
+      }
+
+      System.out.println();
+
+      for (String recebeNomes : nomes) {
+          if (recebeNomes.startsWith("ici", 2))
+              System.out.printf("\"%s\" inicia com \"ici\" na posição 2 \n", recebeNomes);
+      }
+
+      System.out.println();
+
+      for (String recebeNomes : nomes) {
+          if (recebeNomes.endsWith("ado"))
+              System.out.printf("\"%s\" termina com \"ado\" \n", recebeNomes);
+      }
+      ```
+      
+    - indexOf e lastIndexOf:
+      ```
+      String letras = "abcadefghijklmcopqrsdeftuvz";
+      //TESTA indexOf PARA LOCALIZAR UM CARACTERE EM UM STRING
+      System.out.printf("Último 'c' está localizado no index %d\n", letras.indexOf('c'));
+      System.out.printf("Último 'a' está localizado no index %d \n", letras.indexOf('a', 1));
+
+      //-1 NÃO EXISTE
+      System.out.printf("'$' está localizado no index %d\n\n", letras.indexOf('$'));
+
+      //TESTA lastIndexOf PARA LOCALIZAR UM CARACTERE EM UMA STRING
+      System.out.printf("Último 'c' está localizado no index %d\n", letras.lastIndexOf('c'));
+      System.out.printf("Último 'a' está localizado no index %d\n", letras.lastIndexOf('a', 5));
+      System.out.printf("Último '$' está localizado no index %d\n", letras.lastIndexOf('$'));
+
+      //TESTA indexOf PARA LOCALIZAR UMA SUBSTRING EM UMA STRING
+      System.out.printf("\"def\" está localizado no index %d\n", letras.indexOf("def"));
+
+      //2 argumento string e outro o ponto inicial que começará a pesquisa
+      System.out.printf("\"def\" está localizado no index %d\n", letras.indexOf("def", 7));
+      System.out.printf("\"hello\" está localizado no index %d\n\n", letras.indexOf("hello"));
+      ```
+      
+    - substring:
+      ```
+      String nome = "José Silveira";
+      System.out.println("String : " + nome);
+
+      String substring = nome.substring(5);
+      System.out.println("String depois da 3º index: " + "["+substring+"]");
+
+      substring = nome.substring(1, 6);
+      System.out.println("Substring (1,6): " + "["+substring+"]");
+      ```
+      
+    - replace:
+      ```
+      String nome = "mesquita";
+      String nomeAlterado = nome.replace('e', 'o');
+      System.out.println(nomeAlterado);
+      ```
+      
+    - toUpperCase e toLowerCase:
+      ```
+      String nomeA = "joaquina";
+      String nomeB = "Paulo";
+
+      System.out.println(nomeA.toUpperCase());
+      System.out.println(nomeB.toLowerCase());
+      ```
+      
+    - toCharArray:
+      ```
+      String s1 = "olá";
+      String s2 = "TCHAU";
+      String s3 = " espaços ";
+
+      System.out.println("s1 = "+ s1 + "\n" + "s2 = "+ s2 + "\n" + "s3 = "+s3);
+
+      //MÉTODO REPLACE
+      System.out.printf("Replace 'l' por 'L' no s1: %s\n\n", s1.replace('l', 'L'));
+
+      //MÉTODO UPPER E LOWERCASE
+      System.out.printf("s1.toUpperCase() = %s\n", s1.toUpperCase());
+      System.out.printf("s2.toUpperCase() = %s\n\n", s2.toLowerCase());
+
+      //MÉTODO TRIM - REMOVE OS ESPAÇOS
+      System.out.printf("s3 depois do trim = \"%s\"\n\n", s3.trim());
+
+      //CONVERTEU O olá PARA CHAR
+      char[] charArray = s1.toCharArray();
+      System.out.printf("s1 como um caracter array = ");
+
+      for(char caracter : charArray) {
+          System.out.print(caracter);
+      }
+      ```
+
+  * Comparação de String
+    ```
+    String s1 = "a";
+    String s2 = "a";
+    System.out.println(s1.equals(s2));
+    ```
+    
+  * Diferença entre String e caracter
+    - Em Java, char é um tipo de dados primitivo usado para conter um único caractere. Significa um único caractere do conjunto de caracteres UTF-16. Em comparação,         String é uma classe que contém uma sequência de caracteres e pode ser considerada uma matriz de caracteres.
+    
