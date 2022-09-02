@@ -17,34 +17,43 @@ Revisão sobre a linguagem Java
        }
        
       - Methods:
+      ```
        public class MyClass{
        public  void meuMetodo(/*argumentos*/){
        }
        }
-       
+      ```
+      
       - Main:
+      ```
        public class MyClass{
        public static void main(String[] args){
        }
        }
-       
+      ```
+      
   * Estilo de código
       - Chamada de metodo:
+      ```
        someMethod(longExpression1, longExpression2, longExpression3,
         longExpression4, longExpression5);
 
        var = someMethod1(longExpression1,
                        someMethod2(longExpression2,
                                longExpression3));
-                               
+      ```
+      
       - Metodos aritmeticos:
+      ```
        longName1 = longName2 * (longName3 + longName4 - longName5)
            + 4 * longname6; // PREFER
 
        longName1 = longName2 * (longName3 + longName4
                               - longName5) + 4 * longname6; // AVOID
-                              
+      ```
+      
       - Netodos ternarios:
+      ```
        alpha = (aLongBooleanExpression) ? beta : gamma;
 
        alpha = (aLongBooleanExpression) ? beta
@@ -53,17 +62,23 @@ Revisão sobre a linguagem Java
        alpha = (aLongBooleanExpression)
            ? beta
            : gamma;
-           
+       ```
+       
       - Comentarios:
+      ```
        /*
        *Aqui está um bloco de comentário...
        */
+      ```
        
       - Declarações:
+      ```
        int level; // indentation level
        int size;  // size of table
-       
+      ```
+      
       - Classes e interfaces:
+      ```
        class Sample extends Object {
        int ivar1;
        int ivar2;
@@ -77,7 +92,7 @@ Revisão sobre a linguagem Java
 
        ...
        }
-       
+      ``` 
   * Versões
     * Java 1.8
       Funcionalidades do Java 8:
@@ -87,7 +102,7 @@ Revisão sobre a linguagem Java
            API de Data e Hora
            Essa nova API permitirá que os desenvolvedores tratem data e hora de maneira mais natural, clara e fácil de entender.
            Nashhorn JavaScript Engine
-           Uma nova implementação leve de alto desempenho do motor JavaScript foi integrada ao JDk e está disponível para aplicações Java por meio das APIs existentes.
+           Uma nova implementação leve de alto desempenho do motor JavaScript foi integrada ao JDk e está disponível para aplicações Java por meio das APIs                      existentes.
            Maior Segurança
            A lista manual existente de métodos sensíveis do chamador foi substituída por um mecanismo que identifica com precisão esses métodos e permite que seus                chamadores sejam descobertos com confiança.
            
@@ -116,145 +131,145 @@ Revisão sobre a linguagem Java
       Funcionalidades do Java 18:
           Atualizações e melhorias nas bibliotecas
 
-          JEP 400: UTF-8 por padrão – Define UTF-8 como o conjunto de caracteres padrão das APIs Java padrão. Com essa alteração, as APIs que dependem do conjunto de  caracteres padrão se comportarão de forma consistente em todas as implementações, sistemas operacionais, localidades e configurações.
-          JEP 408: Simple Web Server – Uma ferramenta de linha de comando e API para iniciar um servidor web mínimo que serve apenas arquivos estáticos. Esta ferramenta será útil para prototipagem, codificação ad-hoc e propósitos de teste, particularmente em contextos educacionais.
-          JEP 416: Reimplementar Core Reflection com Method Handles – Reimplementa java.lang.reflect.Method, Constructor e Field sobre os handles de método java.lang.invoke. Ao tornar o método manipula o mecanismo subjacente para reflexão, ele reduz o custo de manutenção e desenvolvimento das APIs java.lang.reflect e java.lang.invoke.
-          JEP 418: Resolução de endereço de Internet SPI – Define uma interface de provedor de serviço (SPI) para resolução de nome e endereço de host, para que java.net.InetAddress possa usar resolvedores diferentes do resolvedor integrado da plataforma.
+          JEP 400: UTF-8 por padrão – Define UTF-8 como o conjunto de caracteres padrão das APIs Java padrão. Com essa alteração, as APIs que dependem do conjunto de           caracteres padrão se comportarão de forma consistente em todas as implementações, sistemas operacionais, localidades e configurações.
+          JEP 408: Simple Web Server – Uma ferramenta de linha de comando e API para iniciar um servidor web mínimo que serve apenas arquivos estáticos. Esta                   ferramenta será útil para prototipagem, codificação ad-hoc e propósitos de teste, particularmente em contextos educacionais.
+          JEP 416: Reimplementar Core Reflection com Method Handles – Reimplementa java.lang.reflect.Method, Constructor e Field sobre os handles de método                     java.lang.invoke. Ao tornar o método manipula o mecanismo subjacente para reflexão, ele reduz o custo de manutenção e desenvolvimento das APIs                         java.lang.reflect e java.lang.invoke.
+          JEP 418: Resolução de endereço de Internet SPI – Define uma interface de provedor de serviço (SPI) para resolução de nome e endereço de host, para que                 java.net.InetAddress possa usar resolvedores diferentes do resolvedor integrado da plataforma.
 
           Ferramentas
 
-          JEP 413: Trechos de código JEP na documentação da API Java – Introduz a tag @snippet para o Doclet padrão do JavaDoc para simplificar a inclusão de código-fonte de exemplo na documentação da API.
+          JEP 413: Trechos de código JEP na documentação da API Java – Introduz a tag @snippet para o Doclet padrão do JavaDoc para simplificar a inclusão de código-           fonte de exemplo na documentação da API.
 
           Visualização e incubadoras para versões posteriores do JDK
 
-          JEP 417: Vector API (Terceira Incubadora) – Fornece uma API para desenvolvedores alavancarem de forma confiável arquiteturas de CPU que fornecem extensões vetoriais escaláveis. Isso levará a um desempenho superior em comparação com cálculos equivalentes em processadores não estendidos.
-          JEP 419: Função Estrangeira e API de Memória (Segunda Incubadora) – Permite que programas Java interoperem com código e dados fora do tempo de execução Java. Ao invocar eficientemente funções externas (ou seja, código fora da JVM) e ao acessar com segurança a memória externa (ou seja, memória não gerenciada pela JVM), a API permite que programas Java chamem bibliotecas nativas e processem dados nativos sem a fragilidade e as armadilhas de JNI.
-          JEP 420: Correspondência de padrões para switch (segunda visualização) – Aprimora a linguagem de programação Java com correspondência de padrões para expressões e instruções de switch, juntamente com extensões para a linguagem de padrões. Estender a correspondência de padrões para switch permite que uma expressão seja testada em vários padrões, cada um com uma ação específica, para que consultas complexas orientadas a dados possam ser expressas de forma concisa e segura.
+          JEP 417: Vector API (Terceira Incubadora) – Fornece uma API para desenvolvedores alavancarem de forma confiável arquiteturas de CPU que fornecem extensões             vetoriais escaláveis. Isso levará a um desempenho superior em comparação com cálculos equivalentes em processadores não estendidos.
+          JEP 419: Função Estrangeira e API de Memória (Segunda Incubadora) – Permite que programas Java interoperem com código e dados fora do tempo de execução               Java. Ao invocar eficientemente funções externas (ou seja, código fora da JVM) e ao acessar com segurança a memória externa (ou seja, memória não gerenciada           pela JVM), a API permite que programas Java chamem bibliotecas nativas e processem dados nativos sem a fragilidade e as armadilhas de JNI.
+          JEP 420: Correspondência de padrões para switch (segunda visualização) – Aprimora a linguagem de programação Java com correspondência de padrões para                 expressões e instruções de switch, juntamente com extensões para a linguagem de padrões. Estender a correspondência de padrões para switch permite que uma             expressão seja testada em vários padrões, cada um com uma ação específica, para que consultas complexas orientadas a dados possam ser expressas de forma               concisa e segura.
 
           Programas Java à prova de futuro
 
-          JEP 421: Finalização obsoleta para remoção – A finalização permanece habilitada por padrão por enquanto, mas pode ser desabilitada para facilitar o teste. Em uma versão futura, ela será desabilitada por padrão e, em uma versão posterior, será removida. Os mantenedores de bibliotecas e aplicativos que dependem da finalização devem considerar a migração para outras técnicas de gerenciamento de recursos, como a instrução try-with-resources e limpadores .
+          JEP 421: Finalização obsoleta para remoção – A finalização permanece habilitada por padrão por enquanto, mas pode ser desabilitada para facilitar o teste.             Em uma versão futura, ela será desabilitada por padrão e, em uma versão posterior, será removida. Os mantenedores de bibliotecas e aplicativos que dependem           da finalização devem considerar a migração para outras técnicas de gerenciamento de recursos, como a instrução try-with-resources e limpadores .
 
           Suporte a clientes Java
 
-          O Oracle Java SE Subscription é uma oferta previsível de pagamento conforme o uso, oferece aos clientes o melhor suporte da categoria, direito ao GraalVM Enterprise, acesso ao Java Management Service e flexibilidade para atualizar no ritmo de seus negócios. Isso ajuda as organizações de TI a gerenciar a complexidade, conter custos e mitigar os riscos de segurança.
+          O Oracle Java SE Subscription é uma oferta previsível de pagamento conforme o uso, oferece aos clientes o melhor suporte da categoria, direito ao GraalVM             Enterprise, acesso ao Java Management Service e flexibilidade para atualizar no ritmo de seus negócios. Isso ajuda as organizações de TI a gerenciar a                 complexidade, conter custos e mitigar os riscos de segurança.
           
     * Java 19 
       Funcionalidades do Java 19:
           
-      Uma prévia dos genéricos universais, da Valhalla. Entregues por meio de três JEPs, os genéricos universais unificariam o tratamento de tipos de referência e primitivos no código genérico, permitindo que as variáveis ​​de tipo Java abrangessem os dois tipos de tipos.Uma visualização de objetos de valor, também um aprimoramento do Valhalla, fornecendo 
+      Uma prévia dos genéricos universais, da Valhalla. Entregues por meio de três JEPs, os genéricos universais unificariam o tratamento de tipos de referência e           primitivos no código genérico, permitindo que as variáveis ​​de tipo Java abrangessem os dois tipos de tipos.Uma visualização de objetos de valor, também um           aprimoramento do Valhalla, fornecendo 
       instâncias de classe que possuem apenas campos de instância final e não possuem identidade de objeto. Classes de valor sem identidade seriam declaradas.
       Uma visualização de padrões de registro, para desconstruir valores de registro. Isso faz parte do Projeto Amber.
-      Fixação de região para o coletor de lixo G1, para reduzir a latência implementando a fixação de região para G1 para que a coleta de lixo não precise ser desabilitada durante regiões 
+      Fixação de região para o coletor de lixo G1, para reduzir a latência implementando a fixação de região para G1 para que a coleta de lixo não precise ser               desabilitada durante regiões 
       críticas JNI (Java Native Interface).Uma porta Linux do JDK para RISC-V, uma arquitetura de conjunto de instruções de código aberto e isenta de royalties.
       
   * Conjunto de palavras reservadas
        - Modificadores de acesso
-      private: acesso apenas dentro da classe
+            private: acesso apenas dentro da classe
 
-      protected: acesso por classes no mesmo pacote e subclasses
+            protected: acesso por classes no mesmo pacote e subclasses
 
-      public: acesso de qualquer classe
+            public: acesso de qualquer classe
 
        - Modificadores de classes, variáveis ou métodos
-      abstract: classe que não pode ser instanciada ou método que precisa ser implementado por uma subclasse não abstrata
+            abstract: classe que não pode ser instanciada ou método que precisa ser implementado por uma subclasse não abstrata
 
-      class: especifica uma classe
+            class: especifica uma classe
 
-      extends: indica a superclasse que a subclasse está estendendo
+            extends: indica a superclasse que a subclasse está estendendo
 
-      final: impossibilita que uma classe seja estendida, que um método seja sobrescrito ou que uma variável seja reinicializada
+            final: impossibilita que uma classe seja estendida, que um método seja sobrescrito ou que uma variável seja reinicializada
 
-      implements: indica as interfaces que uma classe irá implementar
+            implements: indica as interfaces que uma classe irá implementar
 
-      interface: especifica uma interface
+            interface: especifica uma interface
 
-      native: indica que um método está escrito em uma linguagem dependente de plataforma, como o C
+            native: indica que um método está escrito em uma linguagem dependente de plataforma, como o C
 
-      new: instancia um novo objeto, chamando seu construtor
+            new: instancia um novo objeto, chamando seu construtor
 
-      static: faz um método ou variável pertencer à classe ao invés de às instâncias
+            static: faz um método ou variável pertencer à classe ao invés de às instâncias
 
-      strictfp: usado em frente a um método ou classe para indicar que os números de ponto flutuante seguirão as regras de ponto flutuante em todas as expressões
+            strictfp: usado em frente a um método ou classe para indicar que os números de ponto flutuante seguirão as regras de ponto flutuante em todas as                       expressões
 
-      synchronized:indica que um método só pode ser acessado por uma thread de cada vez
+            synchronized:indica que um método só pode ser acessado por uma thread de cada vez
 
-      transient: impede a serialização de campos
+            transient: impede a serialização de campos
 
-      volatile:indica que uma variável pode ser alterada durante o uso de threads
+            volatile:indica que uma variável pode ser alterada durante o uso de threads
 
        - Controle de fluxo dentro de um bloco de código
-      break: sai do bloco de codigo em que ele está
+            break: sai do bloco de codigo em que ele está
 
-      case: executa um bloco de código dependendo do teste do switch
+            case: executa um bloco de código dependendo do teste do switch
 
-      continue:pula a execução do código que viria após essa linha e vai para a próxima passagem do loop
+            continue:pula a execução do código que viria após essa linha e vai para a próxima passagem do loop
 
-      default:executa esse bloco de codigo caso nenhum dos teste de switch-case seja verdadeiro
+            default:executa esse bloco de codigo caso nenhum dos teste de switch-case seja verdadeiro
 
-      do:executa um bloco de código uma vez, e então realiza um teste em conjunto com o while para determinar se o bloco deverá ser executado novamente
+            do:executa um bloco de código uma vez, e então realiza um teste em conjunto com o while para determinar se o bloco deverá ser executado novamente
 
-      else: executa um bloco de código alternativo caso o teste if seja falso
+            else: executa um bloco de código alternativo caso o teste if seja falso
 
-      for:usado para realizar um loop condicional de um bloco de código
+            for:usado para realizar um loop condicional de um bloco de código
 
-      if: usado para realizar um teste lógico de verdadeiro o falso
+            if: usado para realizar um teste lógico de verdadeiro o falso
 
-      instanceof: determina se um objeto é uma instância de determinada classe, superclasse ou interface
+            instanceof: determina se um objeto é uma instância de determinada classe, superclasse ou interface
 
-      return: retorna de um método sem executar qualquer código que venha depois desta linha (também pode retornar uma variável)
+            return: retorna de um método sem executar qualquer código que venha depois desta linha (também pode retornar uma variável)
 
-      switch:indica a variável a ser comparada nas expressões case
+            switch:indica a variável a ser comparada nas expressões case
 
-      while: executa um bloco de código repetidamente enquanto a condição for verdadeira
+            while: executa um bloco de código repetidamente enquanto a condição for verdadeira
 
        - Tratamento de erros
-      assert: testa uma expressão condicional para verificar uma suposição do programador
+            assert: testa uma expressão condicional para verificar uma suposição do programador
 
-      catch: declara o bloco de código usado para tratar uma exceção
+            catch: declara o bloco de código usado para tratar uma exceção
 
-      finally:bloco de código, após um try-catch, que é executado independentemente do fluxo de programa seguido ao lidar com uma exceção
+            finally:bloco de código, após um try-catch, que é executado independentemente do fluxo de programa seguido ao lidar com uma exceção
 
-      throw:usado para passar uma exceção para o método que o chamou
+            throw:usado para passar uma exceção para o método que o chamou
 
-      throws: indica que um método pode passar uma exceção para o método que o chamou
+            throws: indica que um método pode passar uma exceção para o método que o chamou
 
-      try: bloco de código que tentará ser executado, mas que pode causar uma exceção
+            try: bloco de código que tentará ser executado, mas que pode causar uma exceção
 
        - Controle de pacotes
-      import:importa pacotes ou classes para dentro do código
+            import:importa pacotes ou classes para dentro do código
 
-      package: especifica a que pacote todas as classes de um arquivo pertencem
+            package: especifica a que pacote todas as classes de um arquivo pertencem
 
        - Primitivos
-      boolean:um valor indicando verdadeiro ou falso
+            boolean:um valor indicando verdadeiro ou falso
 
-      byte: um inteiro de 8 bits (signed)
+            byte: um inteiro de 8 bits (signed)
 
-      char: um caracter unicode (16-bit unsigned)
+            char: um caracter unicode (16-bit unsigned)
 
-      double: um número de ponto flutuante de 64 bits (signed)
+            double: um número de ponto flutuante de 64 bits (signed)
 
-      float: um número de ponto flutuante de 32 bits (signed)
+            float: um número de ponto flutuante de 32 bits (signed)
 
-      int: um inteiro de 32 bits (signed)
+            int: um inteiro de 32 bits (signed)
 
-      long: um inteiro de 64 bits (signed)
+            long: um inteiro de 64 bits (signed)
 
-      short: um inteiro de 32 bits (signed)
+            short: um inteiro de 32 bits (signed)
 
        - Variáveis de referência
-      super: refere-se a superclasse imediata
+            super: refere-se a superclasse imediata
 
-      this: refere-se a instância atual do objeto
+            this: refere-se a instância atual do objeto
 
        - Retorno de um método
-      void: indica que o método não tem retorno
+            void: indica que o método não tem retorno
 
        - Palavras reservadas não utilizadas
-      const: Não utilize para declarar constantes; use public static final
+            const: Não utilize para declarar constantes; use public static final
 
-      goto: não implementada na linguagem Java por ser considerada prejudicial.
+            goto: não implementada na linguagem Java por ser considerada prejudicial.
 
   * Ambiente de Desenvolvimento e Ferramentas
     * Documentação oficial
@@ -271,7 +286,7 @@ Revisão sobre a linguagem Java
         7 – JGrasp. 
         8 – DrJava.
         
-      - Criando um projeto: https://www.alura.com.br/conteudo/intellij-idea-truques-para-aumentar-sua-produtividade-em-projetos-java?gclid=CjwKCAjwsMGYBhAEEiwAGUXJae_4Anz228D8giU5A9ycNmlfFKhayDRzH117ct6ODugObtKQKieMWxoCXbcQAvD_BwE
+      - Criando um projeto: https://www.alura.com.br/conteudo/intellij-idea-truques-para-aumentar-sua-produtividade-em-projetos-java?                                                             gclid=CjwKCAjwsMGYBhAEEiwAGUXJae_4Anz228D8giU5A9ycNmlfFKhayDRzH117ct6ODugObtKQKieMWxoCXbcQAvD_BwE
         
   * Mercado
     * Popularidade 
