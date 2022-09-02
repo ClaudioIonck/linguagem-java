@@ -1,0 +1,180 @@
+* [Fluxo de Controle](Fluxo de Controle.md)
+  * Estruturas de Decisões
+    * if-else-then
+      ```
+      class IfElseDemo {
+         public static void main(String[] args) {
+
+             int testscore = 76;
+             char grade;
+
+             if (testscore >= 90) {
+                 grade = 'A';
+             } else if (testscore >= 80) {
+                 grade = 'B';
+             } else if (testscore >= 70) {
+                 grade = 'C';
+             } else if (testscore >= 60) {
+                 grade = 'D';
+             } else {
+                 grade = 'F';
+             }
+             System.out.println("Grade = " + grade);
+         }
+      }
+      ```
+      
+    * switch:
+      ```
+      switch (expressão) {
+
+      case valor1:
+
+      // bloco de código que será executado
+
+      break;
+
+      case valor2:
+
+      // bloco de código que será executado
+
+      break;
+
+      case valorN:
+
+      // bloco de código que será executado
+
+      break;
+
+      default:
+
+      // bloco de código que será executado se nenhum dos cases for aceito
+
+      }
+      ```
+      
+  * Estruturas de Repetições
+    * for
+      ```
+      public class forSimples{
+          public static void main(String[] args) {
+              for(int count=10 ; count >= 1; count--){
+                  System.out.println(count);
+              }
+          }
+      }
+      ```
+      
+    * while
+      ```
+      public class Aula0021 {
+
+          public static void main(String[] args) {
+              //Estrutura While
+
+      //        enquanto(<=9){
+      //            //incremento da variável que está servindo a nossa condição
+      //            inteira = inteira + 1;
+      //            imprima("essa msg");
+      //        }
+
+              //INCREMENTADO - de 0 à 9
+              int i = 0;
+              while(i<=9){
+                  i = i + 1;
+                  System.out.println( i );
+              }
+              /*
+               * 1
+               * 2
+               * 3
+               * 4
+               * 5
+               * 6
+               * 7
+               * 8
+               * 9
+               * 10
+               */
+
+              //DE-CREMENTADO - de 9 à 0
+              int x = 0;
+              while(x>=0){
+                  x = x - 1;
+                  System.out.println( x );
+              }
+              /*
+              * 10
+              * 9
+              * 8
+              * 7
+              * 6
+              * 5
+              * 4
+              * 3
+              * 2
+              * 1
+              * 0
+              * */
+
+          }
+
+      }
+      ```
+      
+    * do-while 
+      ```
+      public class JavaDoWhileLoop {
+
+       public static void main(String[] args) {
+
+        int i = 5;
+        do {
+         System.out.println(i);
+         i++;
+        } while (i <= 10);
+       }
+      }
+      ```
+      
+    * Comandos break e continue
+      ```
+      public class breakTest {
+          public static void main(String[] args) {
+              long i = System.currentTimeMillis();
+              boolean imprimir = true;
+
+              for(int count=1 ; count <=1000000 ; count++){
+                  if((count % 17 == 0) && (count % 19 == 0))
+                      if(imprimir){
+                          System.out.println(count);
+                          imprimir=false;
+                      }
+              }
+
+              System.out.println("Tempo de execução, em milisegundos: "+ (System.currentTimeMillis() -i));
+          }
+
+      }
+      
+      
+      public class continueTest {
+          public static void main(String[] args) {
+              long i = System.currentTimeMillis();
+
+              for(int count=1 ; count <=1000000 ; count++){
+                  if(count % 2 == 0){
+                      continue;
+                  }
+                  if((count % 17 == 0) && (count % 19 == 0)){
+                      System.out.println(count);
+                      break;
+                  }
+
+              }
+
+              System.out.println("Tempo de execução, em milisegundos: "+ (System.currentTimeMillis() -i));
+          }
+
+      }
+      ```
