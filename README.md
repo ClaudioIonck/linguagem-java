@@ -1555,7 +1555,7 @@ Revisão sobre a linguagem Java
 Continuara...
 
 
-* 12. Classe
+* [12. Classe](12.md)
   * Definição:
     ```
     Uma classe é um elemento do código Java que utilizamos para representar objetos do mundo real. Dentro dela é comum declararmos atributos e métodos, que               representam, respectivamente, as características e comportamentos desse objeto.
@@ -1905,7 +1905,7 @@ Continuara...
 
     --------------------------------------------------------------------
     
-* 13. Pacotes 
+* [13. Pacotes](13.md) 
   * Definição
     ```
     Pacotes java são utilizados para organizar as classes da sua aplicação. Um programa pode, facilmente, ter mais de centenas de classes. Então é muito importante       que todos os seus componentes fiquem organizados. Podemos pensar nos pacotes como uma pasta do seu sistema de arquivos.
@@ -2049,7 +2049,7 @@ Continuara...
       --------------------------------------------------------------------
       
       
-* Escopo de classe e objeto
+* [Escopo de classe e objeto](14.md)
   ```
   public class principal {
  
@@ -2408,7 +2408,7 @@ Continuara...
        }
        ```
        
-* Interface
+* [Interface](16.md)
   * Definição
     ```
     A interface é um recurso muito utilizado em Java, bem como na maioria das linguagens orientadas a objeto, para “obrigar” a um determinado grupo de classes a ter       métodos ou propriedades em comum para existir em um determinado contexto, contudo os métodos podem ser implementados em cada classe de uma maneira diferente.
@@ -2658,7 +2658,7 @@ Continuara...
       
       --------------------------------------------------------------------
       
-* Classe abstrada
+* [Classe abstrada](17.md)
   * Definição
     ```
     É um tipo de classe especial que não pode ser instanciada, apenas herdada. Sendo assim, uma classe abstrata não pode ter um objeto criado a partir de sua             instanciação. Essas classes são muito importantes quando não queremos criar um objeto a partir de uma classe “geral”, apenas de suas “subclasses”.
