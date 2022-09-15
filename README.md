@@ -1938,11 +1938,138 @@ Continuara...
        ![image](https://user-images.githubusercontent.com/78597253/190510825-1ab92f29-15f5-43b6-98a9-6c28762bc083.png)
 
   * Definição de um pacote em uma classe
+    ```
+    import package.name.Class;   // Import a single class
+    import package.name.*;   // Import the whole package
+    
+    import java.util.Scanner;
+    
+    import java.util.Scanner;
+
+    class MyClass {
+      public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter username");
+
+        String userName = myObj.nextLine();
+        System.out.println("Username is: " + userName);
+      }
+    }
+    ```
+    
   * Importando uma classe de um pacote diferente
+    ```
+    import com.my.stuff.main.Main;
+    import com.my.stuff.second.*;
+    
+    package com.my.stuff.main
+
+    import com.my.stuff.second.Second;   // THIS IS THE IMPORTANT LINE FOR YOUR QUESTION
+
+    class Main {
+       public static void main(String[] args) {
+          Second second = new Second();
+          second.x();  
+       }
+    }
+    ```
+    
   * Visibilidade de classes, atributos e métodos
+    ```
+       package br.visibilidade.outropacote;
+
+       import br.visibilidade.Produto;
+
+       /**
+        * Classe utilizada para testar a visibilidade protected
+        * do atributo e métodos da classe Produto a partir de outro
+        * pacote.
+        */
+       public class TesteProdutoOutroPacote {
+         public static void main(String[] args) {
+           Produto prodCaneta = new Produto();
+           prodCaneta.setNomeProduto("Caneta");
+           System.out.println(prodCaneta.getNomeProduto());
+         }
+       }
+    ```
      * Default/Pacote  
+       ```
+       public class FindEvenOdd {  
+       public static void main(String args[])   
+       {  
+       int number=87;  
+       //returns true if num is perfectly divisible by 2  
+       if(number % 2 == 0)  
+       System.out.println(number +" is even number.");  
+       else  
+       System.out.println(number +" is odd number.");  
+       }  
+       }  
+       
+       
+       
+       
+       import java.io.PrintStream;  
+       public class FindEvenOdd   
+       {   
+       public FindEvenOdd()   
+       {  
+       }  
+       public static void main(String[] paramArrayOfString)   
+       {   
+       int i = 87;  
+       if (i % 2 == 0)   
+       {  
+       System.out.println(i + " is even number.");  
+       }   
+       else   
+       {  
+       System.out.println(i + " is odd number.");  
+       }  
+       }  
+       }  
+       ```
+       
   * Pacote default
     * Importar uma classe em um pacote default 
+      ```
+      public class FindEvenOdd  
+      {  
+      public static void main(String args[])   
+      {  
+      int number=87;  
+      //returns true if num is perfectly divisible by 2  
+      if(number % 2 == 0)  
+      System.out.println(number +" is even number.");  
+      else  
+      System.out.println(number +" is odd number.");  
+      }  
+      }   
+      
+      
+      
+      import java.io.PrintStream;  
+      public class FindEvenOdd   
+      {   
+      public FindEvenOdd()   
+      {  
+      }  
+      public static void main(String[] paramArrayOfString)   
+      {   
+      int i = 87;  
+      if (i % 2 == 0)   
+      {  
+      System.out.println(i + " is even number.");  
+      }   
+      else   
+      {  
+      System.out.println(i + " is odd number.");  
+      }  
+      }  
+      }  
+      ```
+      
 * Escopo de classe e objeto
   * Definição 
   * Palavra reservada static 
