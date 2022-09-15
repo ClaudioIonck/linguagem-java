@@ -2680,12 +2680,144 @@ Continuara...
       }
       ```
       
+      --------------------------------------------------------------------
+      
 * Classe abstrada
   * Definição
+    ```
+    É um tipo de classe especial que não pode ser instanciada, apenas herdada. Sendo assim, uma classe abstrata não pode ter um objeto criado a partir de sua             instanciação. Essas classes são muito importantes quando não queremos criar um objeto a partir de uma classe “geral”, apenas de suas “subclasses”.
+    ```
+    
      * Representação de classe abstrata na UML
+       ![image](https://user-images.githubusercontent.com/78597253/190520454-1114e234-4edb-4a88-a168-5203730e6c16.png)
+
   * Criação de uma classe que extende uma classe abstrata
+    ```
+    public class TestaOperacaoMatematica {
+
+     //EXECUTA A OPERACAO - COM POLIMORFISMO
+     public static void calculaOperacao(OperacaoMatematica o, double x, double y){
+      System.out.println(o.calcular(x, y));
+     }
+
+     public static void main(String[] args) {
+      calculaOperacao (new Soma(), 2500, 200);
+      calculaOperacao (new Multiplicacao(), 10, 10);
+     }
+    }
+    
+    
+    
+    abstract class Conta {
+
+     private double saldo;
+
+     public void setSaldo(double saldo) {
+      this.saldo = saldo;
+     }
+
+     public double getSaldo() {
+      return saldo;
+     }
+
+     public abstract void imprimeExtrato();
+
+    }
+    ```
   * Polimorfismo
     * Conversão de tipos 
+      ```
+      public class TV {
+        private int tamanho;
+        private int canal;
+        private int volume;
+        private boolean ligada;
+        public TV(int tamanho) {
+          this.tamanho = tamanho;
+          this.canal = 0;
+          this.volume = 0;
+          this.ligada = false;
+        }
+        // abaixo vem todos os métodos construtores get e set...
+        // Encapsulamento
+      }
+
+      public interface ControleRemoto {
+        void mudarCanal(int canal);
+        void aumentarVolume (int taxa);
+        void diminuirVolume (int taxa);
+        boolean ligar();
+        boolean desligar();
+      }
+      
+      
+      
+      public class ModeloTV001 extends TV implements ControleRemoto {
+        public final String MODELO = "TV001";
+        public ModeloTV001(int tamanho) {
+          super(tamanho);
+        }
+
+        public void desligar() {
+          super.setLigada(false);
+        }
+
+        public void ligar() {
+          super.setLigada(true);
+        }
+
+        public void aumentarVolume(int taxa) { }
+        public void diminuirVolume(int taxa) { }
+        public void mudarCanal(int canal) { }
+      }
+      
+      
+      
+      public class ModeloX extends TV implements ControleRemoto {
+        public final String MODELO = "TV-X";
+
+        public ModeloSDX(int tamanho) {
+          super(tamanho);
+        }
+
+        public void desligar() {
+          System.out.println("Obrigado por Utilizar a Televisão!");
+          super.setLigada(false);
+        }
+
+        public void ligar() {
+          super.setLigada(true);
+        }
+
+        public void aumentarVolume(int taxa) { }
+        public void diminuirVolume(int taxa) { }
+        public void mudarCanal(int canal) { }
+      }
+      
+      
+      
+      public class ExemploInterfaceamento {
+        public static void main(String[] args) {
+          ModeloTV001 tv1 = new ModeloTV001(21);
+          ModeloSDX tv2 = new ModeloX (42);
+          tv1.ligar();
+          tv2.ligar();
+          System.out.print("TV1 - modelo " + tv1.MODELO + " está ");
+          System.out.println(tv1.isLigada() ? "ligada" : "desligada");
+          System.out.print("TV2 - modelo " + tv2.MODELO + " está ");
+          System.out.println(tv1.isLigada() ? "ligada" : "desligada");
+          // ambas as TVs estão ligadas e vamos desligá-las
+          System.out.println("Desligando modelo " + tv1.MODELO);
+          tv1.desligar();
+          System.out.println("Desligando modelo " + tv2.MODELO);
+          tv2.desligar();
+        }
+      }
+      ```
+      
+--------------------------------------------------------------------
+Continuara...
+      
 * Coleções 
   * Definição
   * List e Arraylist 
