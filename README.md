@@ -2070,28 +2070,616 @@ Continuara...
       }  
       ```
       
+      --------------------------------------------------------------------
+      
+      
 * Escopo de classe e objeto
-  * Definição 
+  ```
+  public class principal {
+ 
+  public static void main(String[] args)
+    {
+        Planetas marte = new Planetas(3.0, 1.5, 6.419e23);
+
+        marte.apelido = "Marte";
+
+        System.out.println("Quantidade de planetas: " + Planetas.numeroDePlanetas);
+        System.out.println("Nome do Planeta: " + marte.apelido);
+        System.out.println("As outras variaveis da classe não podem ser alcançadas devido ao escopo");
+        System.out.println("mas podem ser utlizadas dentro da classe");
+    }
+   }
+  ```
+  * Definição:
+    ```
+    Escopo refere-se à vida e acessibilidade de uma variável. Quão grande é o alcance depende de onde uma variável é declarada. Por exemplo, se uma variável é             declarada na parte superior de uma classe, ela será acessível a todos os métodos de classe. Se for declarada num método, em seguida, só pode ser utilizada em tal     método.
+
+    O escopo de uma variável é a parte do programa que pode acessar uma variável. Quando você tenta acessar uma variável que não está no escopo, você normalmente tém     um erro do compilador
+    ```
+    
   * Palavra reservada static 
+    ```
+    public class Calculo {
+    static Montagem m = new Montagem();
+
+    public static void main(String args[])
+    {
+    Calculo cl = new Calculo();
+    cl.printMessage(“Mensagem escrita em java”);
+    m.mostraMontagem(“Frase de calculo escrita em montagem”);
+
+     }
+     private void printMessage(String msg)
+      {
+        System.out.println(msg);
+       };
+    }
+
+    class Montagem {
+    public Montagem()
+    {
+
+        }
+       public static void mostraMontagem(String palavra)
+         {
+           System.out.println(palavra);
+         }
+    }
+    ```
+    
 * Herança
   * Definição
+    ```
+    A herança é um princípio da POO que permite a criação de novas classes a partir de outras previamente criadas. Essas novas classes são chamadas de subclasses, ou     classes derivadas; e as classes já existentes, que deram origem às subclasses, são chamadas de superclasses, ou classes base.
+    ```
+    
      * Representação de herança na UML
+       ![image](https://user-images.githubusercontent.com/78597253/190514570-f90558cd-4bcc-4a25-8517-2c739ea0dacb.png)
+
   * Criação de uma classe que realiza herança 
+    ```
+    public class Bicycle {
+        
+    // the Bicycle class has three fields
+    public int cadence;
+    public int gear;
+    public int speed;
+        
+    // the Bicycle class has one constructor
+    public Bicycle(int startCadence, int startSpeed, int startGear) {
+        gear = startGear;
+        cadence = startCadence;
+        speed = startSpeed;
+    }
+        
+    // the Bicycle class has four methods
+    public void setCadence(int newValue) {
+        cadence = newValue;
+    }
+        
+    public void setGear(int newValue) {
+        gear = newValue;
+    }
+        
+    public void applyBrake(int decrement) {
+        speed -= decrement;
+    }
+        
+    public void speedUp(int increment) {
+        speed += increment;
+    }
+    
+    
+    
+    
+    public class MountainBike extends Bicycle {
+        
+    // the MountainBike subclass adds one field
+    public int seatHeight;
+
+    // the MountainBike subclass has one constructor
+    public MountainBike(int startHeight,
+                        int startCadence,
+                        int startSpeed,
+                        int startGear) {
+        super(startCadence, startSpeed, startGear);
+        seatHeight = startHeight;
+    }   
+        
+    // the MountainBike subclass adds one method
+    public void setHeight(int newValue) {
+        seatHeight = newValue;
+    }   
+    }
+    ```  
+
   * Sobreescrita de métodos
+    ```
+    // A Simple Java program to demonstrate
+    // Overriding and Access-Modifiers
+
+    class Parent {
+     // private methods are not overridden
+     private void m1()
+     {
+      System.out.println("From parent m1()");
+     }
+
+     protected void m2()
+     {
+      System.out.println("From parent m2()");
+     }
+    }
+
+    class Child extends Parent {
+     // new m1() method
+     // unique to Child class
+     private void m1()
+     {
+      System.out.println("From child m1()");
+     }
+
+     // overriding method
+     // with more accessibility
+     @Override
+     public void m2()
+     {
+      System.out.println("From child m2()");
+     }
+    }
+
+    // Driver class
+    class Main {
+     public static void main(String[] args)
+     {
+      Parent obj1 = new Parent();
+      obj1.m2();
+      Parent obj2 = new Child();
+      obj2.m2();
+     }
+    }
+    ```
+   
   * Polimorfismo
+    ```
+    interface GUIFactory
+    public Menu createMenu();
+    }
+
+    class WinFactory implements GUIFactory {
+
+    public Menu createMenu() {
+    return new WinMenu();
+    }
+    }
+
+    class LinuxFactory implements GUIFactory {
+    public Menu createMenu() {
+    return new LinuxMenu();
+    }
+    }
+    
+    
+    
+    
+    interface Menu {
+    public void paint();
+    }
+
+    class WinMenu implements Menu {
+    public void paint() {
+    System.out.println("Eu sou um WinMenu");
+    }
+    }
+
+    class LinuxMenu implements Menu {
+    public void paint() {
+    System.out.println("Eu sou um LinuxMenu");
+    }
+    }
+    
+    
+    
+    class Aplicacao {
+    public Aplicacao(GUIFactory factory) {
+    Menu menu = factory.createMenu();
+    menu.paint();
+    }
+    }
+
+    class Principal {
+    public static void main(String args[]) {
+    chamar Application();
+    //De preferencia leia de algum lugar e coloque a opção na variável
+    int tipoDeMenu = 0;
+    if (tipoDeMenu == 0)
+    new Aplicacao(new WinFactory());
+    else
+    new Aplicacao(new LinuxFactory());
+    }
+    }
+    ```
+    
     * Conversão de tipos 
+      ```
+      import java.util.Scanner;
+      public class NarrowingExample {
+         public static void main(String args[]){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter an integer value: ");
+            int i = sc.nextInt();
+            char ch = (char) i;
+            System.out.println("Character value of the given integer: "+ch);
+         }
+      }
+      ```
+      
   * Visibilidade de atributos e métodos
+    ```
+    public class Animal {
+      public void eat() { /* Do something */ }
+    }
+    
+    public class Dog extends Animal {
+    }
+
+    public class Dog extends Animal {
+      public void bark() { /* Do something */ }
+    }
+    
+    class Toy {} 
+
+    class Animal{} 
+
+    // Cat is an Animal, so Cat class extends Animal class.
+    class Cat extends Animal { 
+     // Cat has a Toy, so Cat has an instance of Toy as its member.
+     private Toy toy; 
+    }
+    ```
      * Protegido
+       ```
+       class Person {
+         protected String fname = "John";
+         protected String lname = "Doe";
+         protected String email = "john@doe.com";
+         protected int age = 24;
+       }
+
+       class Student extends Person {
+         private int graduationYear = 2018;
+         public static void main(String[] args) {
+           Student myObj = new Student();
+           System.out.println("Name: " + myObj.fname + " " + myObj.lname);
+           System.out.println("Email: " + myObj.email);
+           System.out.println("Age: " + myObj.age);
+           System.out.println("Graduation Year: " + myObj.graduationYear);
+         }
+       ```
+
   * Palavra reservada super 
-     * Encadeamento de construtor 
+    ```
+    class Animal { // Superclass (parent)
+      public void animalSound() {
+        System.out.println("The animal makes a sound");
+      }
+    }
+
+    class Dog extends Animal { // Subclass (child)
+      public void animalSound() {
+        super.animalSound(); // Call the superclass method
+        System.out.println("The dog says: bow wow");
+      }
+    }
+
+    public class Main {
+      public static void main(String args[]) {
+        Animal myDog = new Dog(); // Create a Dog object
+        myDog.animalSound(); // Call the method on the Dog object
+      }
+    }
+    ```
+     * Encadeamento de construtor
+       ```
+        @SerializedName("new")
+        private String New;
+       public String getNew ()
+        {
+            return New;
+        }
+        public void setNew (String aNew)
+        {
+            New = aNew;
+        }
+       ```
      * Encadeamento de método
+       ```
+       class A {
+
+        private int a;
+        private float b;
+
+        A() { System.out.println("Calling The Constructor"); }
+
+        int setint(int a)
+        {
+         this.a = a;
+         return this.a;
+        }
+
+        float setfloat(float b)
+        {
+         this.b = b;
+         return this.b;
+        }
+
+        void display()
+        {
+         System.out.println("Display=" + a + " " + b);
+        }
+       }
+
+       // Driver code
+       public class Example {
+        public static void main(String[] args)
+        {
+         // This will return an error as
+         // display() method needs an object but
+         // setint(10) is returning an int value
+         // instead of an object reference
+         new A().setint(10).display();
+        }
+       }
+       ```
+       
 * Interface
   * Definição
+    ```
+    A interface é um recurso muito utilizado em Java, bem como na maioria das linguagens orientadas a objeto, para “obrigar” a um determinado grupo de classes a ter       métodos ou propriedades em comum para existir em um determinado contexto, contudo os métodos podem ser implementados em cada classe de uma maneira diferente.
+    ```
      * Representação de interface na UML
+       ![image](https://user-images.githubusercontent.com/78597253/190518875-7192118d-cdda-4057-9096-701dca20dda4.png)
+
   * Criação de uma classe que implementa uma interface
+    ```
+    public interface FiguraGeometrica
+    {
+     public String getNomeFigura();
+     public int getArea();
+     public int getPerimetro();
+    }
+    
+    
+    
+    public class Quadrado implements FiguraGeometrica {
+
+        private int lado;
+
+        public int getLado() {
+            return lado;
+        }
+
+        public void setLado(int lado) {
+            this.lado = lado;
+        }
+
+        @Override
+        public int getArea() {
+            int area = 0;
+            area = lado * lado;
+
+            return area;
+        }
+
+        @Override
+        public int getPerimetro() {
+            int perimetro = 0;
+
+            perimetro = lado * 4;
+            return perimetro;
+        }
+
+        @Override
+        public String getNomeFigura() {
+            return "quadrado";
+        }
+    }
+    
+    
+    
+    public class Triangulo implements FiguraGeometrica {
+
+        private int base;
+        private int altura;
+        private int ladoA;
+        private int ladoB;
+        private int ladoC;
+
+        public int getAltura() {
+            return altura;
+        }
+
+        public void setAltura(int altura) {
+            this.altura = altura;
+        }
+
+        public int getBase() {
+            return base;
+        }
+
+        public void setBase(int base) {
+            this.base = base;
+        }
+
+        public int getLadoA() {
+            return ladoA;
+        }
+
+        public void setLadoA(int ladoA) {
+            this.ladoA = ladoA;
+        }
+
+        public int getLadoB() {
+            return ladoB;
+        }
+
+        public void setLadoB(int ladoB) {
+            this.ladoB = ladoB;
+        }
+
+        public int getLadoC() {
+            return ladoC;
+        }
+
+        public void setLadoC(int ladoC) {
+            this.ladoC = ladoC;
+        }
+
+        @Override
+        public String getNomeFigura() {
+            return "Triangulo";
+        }
+
+        @Override
+        public int getArea() {
+            int area = 0;
+            area = (base * altura) / 2;
+            return area;
+        }
+
+        @Override
+        public int getPerimetro() {
+            int perimetro = 0;
+            perimetro = ladoA + ladoB + ladoC;
+
+            return perimetro;
+        }
+    }
+    
+    
+    
+    
+    ```
+    
   * Sobreescrita de métodos
+    ```
+    public class Filme {
+        public void alugarFilme(int dias){
+              if ((dias > 0) && (dias <= 5)){
+                  System.out.println("Aluguel feito.");
+              }else{
+                  System.out.println("Não é possível alugar um filme por menos de 0 dias ou mais de 5 dias.");
+              }
+        }
+    }
+    
+    
+    
+    public class Filme24Horas extends Filme {
+ 
+        @Override
+        public void alugarFilme(int dias) {
+            if ((dias > 0) && (dias <=1)){
+                System.out.println("Aluguel feito.");
+            }else{
+                System.out.println("Filme 24 horas deve ser alugado por no máximo 1 dia.");
+            }
+        }
+    }
+    ```
+    
   * Polimorfismo
+    ```
+    interface GUIFactory
+    public Menu createMenu();
+    }
+
+    class WinFactory implements GUIFactory {
+
+    public Menu createMenu() {
+    return new WinMenu();
+    }
+    }
+
+    class LinuxFactory implements GUIFactory {
+    public Menu createMenu() {
+    return new LinuxMenu();
+    }
+    }
+    
+    
+    
+    interface Menu {
+    public void paint();
+    }
+
+    class WinMenu implements Menu {
+    public void paint() {
+    System.out.println("Eu sou um WinMenu");
+    }
+    }
+
+    class LinuxMenu implements Menu {
+    public void paint() {
+    System.out.println("Eu sou um LinuxMenu");
+    }
+    }
+    
+    
+    
+    class Aplicacao {
+    public Aplicacao(GUIFactory factory) {
+    Menu menu = factory.createMenu();
+    menu.paint();
+    }
+    }
+
+    class Principal {
+    public static void main(String args[]) {
+    chamar Application();
+    //De preferencia leia de algum lugar e coloque a opção na variável
+    int tipoDeMenu = 0;
+    if (tipoDeMenu == 0)
+    new Aplicacao(new WinFactory());
+    else
+    new Aplicacao(new LinuxFactory());
+    }
+    }
+    ```
+    
     * Conversão de tipos 
+      ```
+      class Test {			
+          public static void main(String[] args) {
+              // Casting conversion (5.4) of a float literal to
+              // type int. Without the cast operator, this would
+              // be a compile-time error, because this is a
+              // narrowing conversion (5.1.3):
+              int i = (int)12.5f;
+              // String conversion (5.4) of i's int value:
+              System.out.println("(int)12.5f==" + i);
+              // Assignment conversion (5.2) of i's value to type
+              // float. This is a widening conversion (5.1.2):
+              float f = i;
+              // String conversion of f's float value:
+              System.out.println("after float widening: " + f);
+              // Numeric promotion (5.6) of i's value to type
+              // float. This is a binary numeric promotion.
+              // After promotion, the operation is float*float:
+              System.out.print(f);
+              f = f * i;
+              // Two string conversions of i and f:
+              System.out.println("*" + i + "==" + f);
+              // Method invocation conversion (5.3) of f's value
+              // to type double, needed because the method Math.sin
+              // accepts only a double argument:
+              double d = Math.sin(f);
+              // Two string conversions of f and d:
+              System.out.println("Math.sin(" + f + ")==" + d);
+          }
+      }
+      ```
+      
 * Classe abstrada
   * Definição
      * Representação de classe abstrata na UML
